@@ -43,12 +43,14 @@
       </div>
       <div class="w-2/3 bg-gray-200 flex flex-col items-center justify-center">
         <!-- Login Form -->
-        <form class="max-w-xs p-6 rounded-lg">
+        <form class="max-w-xs p-6 rounded-lg" *ngIf="activeForm === 'login'">
           <h2 class="text-2xl font-bold pb-3">Login</h2>
           <div class="border-t-4 border-blue-500 rounded-sm w-8 pb-2"></div>
           <div class="text-sm flex pb-4">
             <p>Don't have an account?</p>
-            <a class="pl-1 text-blue-500 font-bold underline" href="#"
+            <a
+              class="pl-1 text-blue-500 font-bold underline cursor-pointer"
+              (click)="switchToRegister()"
               >Register</a
             >
           </div>
@@ -69,10 +71,56 @@
             />
           </div>
           <button
-            type="submit" routerLink="/dashboard"
-            class="bg-blue-500 text-white px-4 py-2 rounded ho ver:bg-blue-600"
+            type="submit"
+            routerLink="/dashboard"
+            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
           >
             Sign In
+          </button>
+        </form>
+
+        <!-- Register Form -->
+        <form class="max-w-xs p-6 rounded-lg" *ngIf="activeForm === 'register'">
+          <h2 class="text-2xl font-bold pb-3">Register</h2>
+          <div class="border-t-4 border-blue-500 rounded-sm w-8 pb-2"></div>
+          <div class="text-sm flex pb-4">
+            <p>Already have an account?</p>
+            <a
+              class="pl-1 text-blue-500 font-bold underline cursor-pointer"
+              (click)="switchToLogin()"
+              >Login</a
+            >
+          </div>
+          <div class="mb-4">
+            <label for="name" class="block">Name</label>
+            <input
+              type="text"
+              id="name"
+              class="w-full px-3 py-2 border border-gray-300 rounded-sm"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="w-full px-3 py-2 border border-gray-300 rounded-sm"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="password" class="block">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="w-full px-3 py-2 border border-gray-300 rounded-sm"
+            />
+          </div>
+          <button
+            type="submit"
+            routerLink="/dashboard"
+            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
+            Register
           </button>
         </form>
       </div>
