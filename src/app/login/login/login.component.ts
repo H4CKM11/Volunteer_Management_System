@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { trigger,state, style, animate, transition } from '@angular/animations';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 
 @Component({
@@ -7,16 +7,22 @@ import { trigger,state, style, animate, transition } from '@angular/animations';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   animations: [
-    trigger('formAnimation', [
-      state('login', style({ transform: 'translateX(0)' })),
-      state('register', style({ transform: 'translateX(-100%)' })),
-      transition('login <=> register', animate('300ms ease-in-out')),
-    ]),
-  ],
+    trigger('slideInOut', [
+      state('void', style({
+        transform: 'translateX(100%)',
+        opacity: 0
+      })),
+      state('*', style({
+        transform: 'translateX(0)',
+        opacity: 1
+      })),
+      transition(':enter', animate('500ms ease-out'))
+    ])
+  ]
 })
 export class LoginComponent {
 
-  activeForm: string = 'login';
+  activeForm: 'login' | 'register' = 'login';
 
   switchToRegister() {
     this.activeForm = 'register';
@@ -25,4 +31,5 @@ export class LoginComponent {
   switchToLogin() {
     this.activeForm = 'login';
   }
+
 }
