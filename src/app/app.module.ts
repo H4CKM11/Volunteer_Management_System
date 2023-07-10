@@ -9,10 +9,14 @@ import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
 import { NavBarModule } from './nav-bar/nav-bar.module';
 import { ProfileSettingsModule } from './profile-settings/profile-settings.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { PopupEventModule } from './popup-event/popup-event.module';
 
 @NgModule({
   declarations: [
-    AppComponent  ],
+    AppComponent,  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,7 +25,11 @@ import { ProfileSettingsModule } from './profile-settings/profile-settings.modul
     HomeModule,
     LoginModule,
     NavBarModule,
-    ProfileSettingsModule
+    ProfileSettingsModule,
+    HttpClientModule,
+    FormsModule,
+    DashboardModule,
+    PopupEventModule
   ],
   providers: [],
   bootstrap: [AppComponent]

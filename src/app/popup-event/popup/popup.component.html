@@ -1,0 +1,29 @@
+<div class="bg-white p-6">
+
+    <form [formGroup]="newEventForm" (ngSubmit)="onSubmitNewEvent()" class="p-4 bg-white">
+
+        <div class="mb-4">
+            <label for="description" class="block mb-2">Name of the event:</label>
+            <input id="description" formControlName="name" name="description" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"/>
+        </div>
+
+        <div class="mb-4">
+        <label for="description" class="block mb-2">Description of the event:</label>
+        <textarea id="description" formControlName="description" name="description" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" rows="4"></textarea>
+        </div>
+    
+        <div class="mb-4">
+        <label for="location" class="block mb-2">Location of the event:</label>
+        <input type="text" id="location" name="location" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" />
+        </div>
+    
+        <div class="mb-4">
+        <label for="time" class="block mb-2">Time and duration:</label>
+        <input type="datetime-local" formControlName="month" id="time" name="time" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" />
+        </div>
+    
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Submit</button>
+    </form>
+
+</div>
+  

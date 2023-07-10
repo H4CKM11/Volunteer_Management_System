@@ -1,22 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
-import { RouterModule } from '@angular/router';
+import { PopupComponent } from './popup/popup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../Shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    PopupComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
     SharedModule
-  ],
-  exports:[
-    LoginComponent
+
   ]
 })
-export class LoginModule { }
+export class PopupEventModule { }
