@@ -8,22 +8,22 @@
     <div class="bg-white p-4 mt-3">
       <ul class="list-none">
         <li *ngFor="let event of eventList">
-          <div class="flex items-start">
+          <div class="flex items-start md:mt-[2%]">
             <div class="flex flex-col">
               <span class="text-red-500">{{ event.month }}</span>
               <span class="font-bold text-lg text-center">{{ event.day }}</span>
             </div>
-            <div class="ml-36 flex flex-col w-36 md:w-auto custom-margin-left-m custom-width-m">
+            <div class="ml-36 flex flex-col 2xl:ml-[8%] 2xl:mt-[0%] w-36 md:w-auto md:ml-[3%]">
               <span class=" font-bold text-base">{{ event.name }}</span>
               <span class="text-gray-600 text-left">{{ event.description }}</span>
             </div>
-            <div class="ml-44 flex flex-row items-center md:w-auto custom-margin-left-m custom-width-m">
+            <div class="ml-44 flex flex-row items-center 2xl:mt-[2%] 2xl:ml-[8%] xl:ml-[3%] md:ml-[3%] md:w-auto custom-width-m md:mt-[4%]">
               <span class=" font-bold text-base">{{ event.volunteers}}</span>
               <span class="text-gray-600 ml-2">out of 30</span>
             </div>
             <div class="ml-auto">
-              <button (click)="shareDialog()" class="border border-blue-500 text-blue-500 bg-white px-4 py-2 rounded-md mr-2">Share</button>
-              <button (click)="registerEvent(event.id)" class="bg-blue-500 text-white px-4 py-2 rounded-md">Register</button>
+              <button (click)="shareDialog()" class="border border-blue-500 text-blue-500 bg-white px-4 2xl:py-2 2xl:h-10 rounded-md mr-2 md:w-20 md:py-0 md:h-8">Share</button>
+              <button (click)="registerEvent(event.id)" class="bg-blue-500 text-white px-4 2xl:py-2 2xl:h-10 rounded-md xl:mt-[8%] xl:w-20 xl:py-0 xl:h-8">Register</button>
             </div>
           </div>
         </li>
