@@ -1,0 +1,12 @@
+<div class="bg-white p-6 w-96">
+    <form [formGroup]="ShareEventForm" (ngSubmit)="onSubmitShare()" >
+        <h2 class="font-bold">Share This Event</h2>
+        <p>Invite your friends and family to join this event</p>
+        <div class="relative">
+            <input type="text" formControlName="email" placeholder="Enter Email" class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none" />
+        </div>
+        <div class="flex justify-end mt-3">
+            <button type="submit" class=" bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Submit</button>
+        </div>
+    </form>
+</div>

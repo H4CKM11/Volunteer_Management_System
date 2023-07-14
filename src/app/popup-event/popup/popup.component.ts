@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { newEvent } from 'src/app/Shared/Model/newEvent';
+import { Router } from '@angular/router';
+import { Email } from 'src/app/Shared/Model/Email';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -11,7 +14,7 @@ import { newEvent } from 'src/app/Shared/Model/newEvent';
 })
 export class PopupComponent {
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient, private router: Router, private dialogref : MatDialog ){}
 
   newEventForm = new FormGroup
   ({
@@ -21,16 +24,21 @@ export class PopupComponent {
     day: new FormControl('')
   })
 
+
   onSubmitNewEvent()
   {
     if(this.newEventForm.valid)
     {
       this.newEventForm.value.day = this.newEventForm.value.month?.substring(10,8); 
       this.newEventForm.value.month = this.newEventForm.value.month? this.getMonthFromTime(this.newEventForm.value.month) : ''
-      this.http.post<newEvent> ("http://localhost:5001/Event/NewEvent",this.newEventForm.value).subscribe(response => 
+      this.http.post<newEvent> ("http://localhost:5001/Event/NewEvent",this.newEventForm.value).subscribe(
+      (response) => 
       {
+        this.router.navigate(['/dashboard']);
+        this.dialogref.closeAll();
+
       }, 
-      error => 
+      (error) => 
       {
       });
     }

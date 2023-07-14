@@ -6,30 +6,28 @@
     </div>
       
     <div class="bg-white p-4 mt-3">
-        <table class="w-full">
-          <thead>
-            <tr>
-              <th class="px-4 py-2 text-left">2022</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="border px-4 py-2">John Doe</td>
-              <td class="border px-4 py-2">25</td>
-              <td class="border px-4 py-2">john.doe@example.com</td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">Jane Smith</td>
-              <td class="border px-4 py-2">30</td>
-              <td class="border px-4 py-2">jane.smith@example.com</td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">Bob Johnson</td>
-              <td class="border px-4 py-2">35</td>
-              <td class="border px-4 py-2">bob.johnson@example.com</td>
-            </tr>
-          </tbody>
-        </table>
+      <ul class="list-none">
+        <li *ngFor="let event of eventList">
+          <div class="flex items-start">
+            <div class="flex flex-col">
+              <span class="text-red-500">{{ event.month }}</span>
+              <span class="font-bold text-lg text-center">{{ event.day }}</span>
+            </div>
+            <div class="ml-36 flex flex-col w-36 md:w-auto custom-margin-left-m custom-width-m">
+              <span class=" font-bold text-base">{{ event.name }}</span>
+              <span class="text-gray-600 text-left">{{ event.description }}</span>
+            </div>
+            <div class="ml-44 flex flex-row items-center md:w-auto custom-margin-left-m custom-width-m">
+              <span class=" font-bold text-base">{{ event.volunteers}}</span>
+              <span class="text-gray-600 ml-2">out of 30</span>
+            </div>
+            <div class="ml-auto">
+              <button (click)="shareDialog()" class="border border-blue-500 text-blue-500 bg-white px-4 py-2 rounded-md mr-2">Share</button>
+              <button (click)="registerEvent(event.id)" class="bg-blue-500 text-white px-4 py-2 rounded-md">Register</button>
+            </div>
+          </div>
+        </li>
+      </ul>
       </div>
       
   </div>

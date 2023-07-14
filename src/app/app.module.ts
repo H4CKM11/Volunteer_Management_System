@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { PopupEventModule } from './popup-event/popup-event.module';
+import { SharePopupModule } from './share-popup/share-popup.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PopupEventModule } from './popup-event/popup-event.module';
     HttpClientModule,
     FormsModule,
     DashboardModule,
-    PopupEventModule
+    PopupEventModule,
+    SharePopupModule
   ],
   providers: [],
   bootstrap: [AppComponent]
