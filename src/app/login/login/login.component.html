@@ -4,7 +4,7 @@
 >
   <div class="flex h-screen items-center justify-center">
     <div
-      class="flex w-full max-w-4xl rounded-xl overflow-hidden drop-shadow-xl h-1/2"
+      class="flex w-full max-w-4xl rounded-xl overflow-hidden drop-shadow-xl h-1/2 md:mr-3 h-2/3"
     >
       <div class="w-2/3 relative">
         <!-- Image -->
@@ -43,7 +43,13 @@
       </div>
       <div class="w-2/3 bg-gray-200 flex flex-col items-center justify-center">
         <!-- Login Form -->
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" class="max-w-xs p-6 rounded-lg" *ngIf="activeForm === 'login'" [@slideInOut]>
+        <form
+          [formGroup]="loginForm"
+          (ngSubmit)="onSubmitLogin()"
+          class="max-w-xs p-6 rounded-lg"
+          *ngIf="activeForm === 'login'"
+          [@slideInOut]
+        >
           <h2 class="text-2xl font-bold pb-3">Login</h2>
           <div class="border-t-4 border-blue-500 rounded-sm w-8 pb-2"></div>
           <div class="text-sm flex pb-4">
@@ -81,7 +87,13 @@
         </form>
 
         <!-- Register Form -->
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()" class="max-w-xs p-6 rounded-lg" *ngIf="activeForm === 'register'" [@slideInOut]>
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="onSubmitRegister()"
+          class="max-w-xs p-6 rounded-lg"
+          *ngIf="activeForm === 'register'"
+          [@slideInOut]
+        >
           <h2 class="text-2xl font-bold pb-3">Register</h2>
           <div class="border-t-4 border-blue-500 rounded-sm w-8 pb-2"></div>
           <div class="text-sm flex pb-4">
