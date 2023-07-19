@@ -34,9 +34,8 @@ export class PopupComponent {
       this.http.post<newEvent> ("http://localhost:5001/Event/NewEvent",this.newEventForm.value).subscribe(
       (response) => 
       {
-        this.router.navigate(['/dashboard']);
         this.dialogref.closeAll();
-
+        location.reload();
       }, 
       (error) => 
       {
@@ -54,8 +53,8 @@ export class PopupComponent {
   
   private getMonthString(month: number): string {
     const monthNames = [
-      'January', 'February', 'March', 'April', 'May', 'June',
-      'July', 'August', 'September', 'October', 'November', 'December'
+      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
     ];
   
     return monthNames[month];
