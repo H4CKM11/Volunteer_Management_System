@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { AccountService } from 'src/app/account/account.service';
 import { Router } from '@angular/router';
 
@@ -24,6 +25,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
+
   loginForm = new FormGroup({
     username: new FormControl('',Validators.required),
     password: new FormControl('',Validators.required),
@@ -33,7 +35,8 @@ export class LoginComponent {
   registerForm = new FormGroup({
     username: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+    password: new FormControl('', Validators.required),
+    skillLevel: new FormControl('', Validators.required)
   })
 
   constructor(private  accountService: AccountService, private router: Router){}

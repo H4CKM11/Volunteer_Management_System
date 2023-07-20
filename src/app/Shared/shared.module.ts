@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
@@ -8,10 +10,17 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    FormsModule,
   ],
   exports:[
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    FormsModule,
+    
   ]
 })
 export class SharedModule { }

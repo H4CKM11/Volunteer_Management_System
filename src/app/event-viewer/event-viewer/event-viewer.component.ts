@@ -43,7 +43,7 @@ export class EventViewerComponent implements OnInit{
     this.http.post<Event>("http://localhost:5001/Event/UpdateVolunteer", data).subscribe(
     (response) =>
     {
-
+      location.reload();
     },
     (error) =>
     {
@@ -80,8 +80,9 @@ export class EventViewerComponent implements OnInit{
       this.dialogref.open(PopupComponent);
     }
 
-    shareDialog()
+    shareDialog(skillLevel: string)
     {
-      this.dialogref.open(SharePopupComponent);
+      const skill = {skillLevel: skillLevel}
+      this.dialogref.open(SharePopupComponent, {data: skill});
     }
 }

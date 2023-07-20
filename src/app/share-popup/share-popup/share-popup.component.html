@@ -26,4 +26,21 @@
             </li>
         </ul>
       </div>
+
+      <div class="lg:mt-2 xl:mt-8">
+        <p class="font-medium text-gray-700">Skills Matched</p>
+        <ul class="mt-3">
+            <li *ngFor="let user of userSkillList">
+                <div class="flex items-start md:mt-[2%]">
+                    <div class="flex flex-col">
+                    <span class="font-semibold text-base">{{ user.username }}</span>
+                    <span class="">{{ user.skillLevel }}</span>
+                    </div>
+                    <div class="ml-auto">
+                        <button (click)="shareIndividually(user.email)" class="border border-blue-500 text-blue-500 bg-white px-4 2xl:py-2 2xl:h-10 rounded-md mr-2 md:w-20 md:py-0 md:h-8">Share</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+      </div>
 </div>

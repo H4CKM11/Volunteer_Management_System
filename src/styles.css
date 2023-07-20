@@ -4,3 +4,22 @@
 @tailwind utilities;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-radio-button.mat-accent{
+    --mdc-radio-disabled-selected-icon-color: #fff;
+    --mdc-radio-disabled-unselected-icon-color: #fff;
+    --mdc-radio-unselected-hover-icon-color: #3b82f6;
+    --mdc-radio-unselected-icon-color: #626262;
+    --mdc-radio-unselected-pressed-icon-color: rgba(255, 255, 255, 0.54);
+    --mdc-radio-selected-focus-icon-color: #b0bec5;
+    --mdc-radio-selected-hover-icon-color: #3b82f6;
+    --mdc-radio-selected-icon-color: #3b82f6;
+    --mdc-radio-selected-pressed-icon-color: #3b82f6;
+    --mat-radio-ripple-color: #3b82f6;
+    --mat-radio-checked-ripple-color: #3b82f6;
+    --mat-radio-disabled-label-color: rgba(255, 255, 255, 0.5);
+}
+
+.mat-mdc-radio-button .mdc-form-field{
+    color: #020202;
+}

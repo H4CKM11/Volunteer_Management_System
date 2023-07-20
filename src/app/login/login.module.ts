@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../Shared/shared.module';
+import { MatRadioModule } from '@angular/material/radio'; // Import MatRadioModule
+
 
 
 
@@ -13,7 +15,8 @@ import { SharedModule } from '../Shared/shared.module';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    MatRadioModule
   ],
   exports:[
     LoginComponent

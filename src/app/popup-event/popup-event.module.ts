@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PopupComponent } from './popup/popup.component';
 import { SharedModule } from '../Shared/shared.module';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 
@@ -11,7 +12,8 @@ import { SharedModule } from '../Shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    MatRadioModule
 
   ]
 })

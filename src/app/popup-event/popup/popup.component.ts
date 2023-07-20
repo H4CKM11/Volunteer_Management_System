@@ -21,7 +21,8 @@ export class PopupComponent {
     name:  new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
     month: new FormControl('', Validators.required),
-    day: new FormControl('')
+    day: new FormControl(''),
+    skillLevel: new FormControl('', Validators.required)
   })
 
 

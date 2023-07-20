@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { Email } from 'src/app/Shared/Model/Email';
 import { User } from 'src/app/Shared/Model/user';
 
@@ -12,8 +12,9 @@ import { User } from 'src/app/Shared/Model/user';
 })
 export class SharePopupComponent implements OnInit{
   userList: User[] = [];
+  userSkillList: User[] = [];
   
-  constructor(private http: HttpClient, private dialogref : MatDialog){}
+  constructor(private http: HttpClient, private dialogref : MatDialog, @Inject(MAT_DIALOG_DATA) public data: any){}
 
   ngOnInit(): void
   {
@@ -27,6 +28,27 @@ export class SharePopupComponent implements OnInit{
                 this.userList.push(nestedObj2);
               }
             }
+        },
+        (error) =>
+        {
+
+        }
+      )
+
+      const skillLevelObject = this.data;
+      const skillLevel = skillLevelObject.skillLevel;
+      console.log(skillLevel);
+      this.http.get<User[]>("http://localhost:5001/Auth/searchSkilledUsers", { params: { skillLevel: skillLevel } }).subscribe(
+        (response) =>
+        {
+          for (const key1 in response) {
+            const nestedObj = response[key1];
+            for (const key2 in nestedObj) {
+                const nestedObj2 = nestedObj[key2];
+                this.userSkillList.push(nestedObj2);
+              }
+            }
+          console.log(response);
         },
         (error) =>
         {

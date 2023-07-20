@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { PopupEventModule } from './popup-event/popup-event.module';
 import { SharePopupModule } from './share-popup/share-popup.module';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SharePopupModule } from './share-popup/share-popup.module';
     FormsModule,
     DashboardModule,
     PopupEventModule,
-    SharePopupModule
+    SharePopupModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

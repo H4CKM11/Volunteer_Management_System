@@ -4,4 +4,5 @@ export interface User {
     password: string;
     email: string
     data: string;
+    skillLevel: string;
 }
