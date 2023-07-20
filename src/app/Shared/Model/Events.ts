@@ -9,4 +9,5 @@ export interface Events
     description: string;
     volunteers: number;
     skillLevel: string;
+    location: string;
 }

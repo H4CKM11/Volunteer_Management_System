@@ -22,14 +22,14 @@ export class PopupComponent {
     description: new FormControl('', Validators.required),
     month: new FormControl('', Validators.required),
     day: new FormControl(''),
-    skillLevel: new FormControl('', Validators.required)
+    skillLevel: new FormControl('', Validators.required),
+    location: new FormControl('', Validators.required)
   })
 
 
   onSubmitNewEvent()
   {
-    if(this.newEventForm.valid)
-    {
+
       this.newEventForm.value.day = this.newEventForm.value.month?.substring(10,8); 
       this.newEventForm.value.month = this.newEventForm.value.month? this.getMonthFromTime(this.newEventForm.value.month) : ''
       this.http.post<newEvent> ("http://localhost:5001/Event/NewEvent",this.newEventForm.value).subscribe(
@@ -41,7 +41,7 @@ export class PopupComponent {
       (error) => 
       {
       });
-    }
+
   }
 
   private getMonthFromTime(time: string): string {
